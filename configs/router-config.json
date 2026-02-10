@@ -7,6 +7,15 @@
   "API_TIMEOUT_MS": 600000,
   "Providers": [
     {
+      "name": "ollama",
+      "api_base_url": "http://10.10.10.103:11434/v1/chat/completions",
+      "api_key": "ollama",
+      "models": ["glm-4.7-flash", "qwen2.5:32b-instruct-q4_K_M", "gpt-oss:20b"],
+      "transformer": {
+        "use": [["maxcompletiontokens", { "max_completion_tokens": 16384 }]]
+      }
+    },
+    {
       "name": "openai",
       "api_base_url": "https://api.openai.com/v1/chat/completions",
       "api_key": "$OPENAI_API_KEY",
